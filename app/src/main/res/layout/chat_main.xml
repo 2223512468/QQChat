@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chat_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <com.qqchat.view.DropdownListView
+        android:id="@+id/message_chat_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@id/header"
+        android:background="@color/transparent"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        android:listSelector="@color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@drawable/chat_bottom_shape" >
+
+            <ImageView
+                android:id="@+id/image_face"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dip"
+                android:src="@drawable/faceicon"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/input_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="2dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="2dip"
+                android:layout_toLeftOf="@+id/send_sms"
+                android:layout_toRightOf="@id/image_face"
+                android:background="@drawable/input_shape"
+                android:gravity="center_vertical" >
+<!-- com.example.tst.view.MyEditText -->
+                <com.qqchat.view.MyEditText
+                    android:id="@+id/input_sms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dip"
+                    android:layout_marginRight="9dip"
+                    android:background="@color/transparent"
+                    android:hint="@string/edittext_notice_0"
+                    android:padding="4dip"
+                    android:textSize="@dimen/text_size_14" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/send_sms"
+                android:layout_width="@dimen/width_16_80"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/input_ll"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/input_ll"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/button_shape"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="#578fbe"
+                android:textSize="@dimen/text_size_9" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/chat_face_container"
+            layout="@layout/chat_face_container"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</RelativeLayout>

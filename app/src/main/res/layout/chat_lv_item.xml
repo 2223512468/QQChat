@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:padding="10dip">
+
+    <TextView
+        android:id="@+id/chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_size_6" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chat_time">
+
+        <LinearLayout
+            android:id="@+id/chart_from_container"
+            android:layout_width="@dimen/width_60_80"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/transparent"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/chatfrom_icon"
+                android:layout_width="@dimen/width_12_80"
+                android:layout_height="@dimen/height_8_80"
+                android:src="@drawable/default_head" />
+
+            <TextView
+                android:id="@+id/chatfrom_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chatfrom_bg"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_12" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/chart_to_container"
+            android:layout_width="@dimen/width_60_80"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent">
+
+            <ImageView
+                android:id="@+id/chatto_icon"
+                android:layout_width="@dimen/width_12_80"
+                android:layout_height="@dimen/height_8_80"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/default_head" />
+
+            <TextView
+                android:id="@+id/chatto_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/chatto_icon"
+                android:background="@drawable/chatto_bg"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_12" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
